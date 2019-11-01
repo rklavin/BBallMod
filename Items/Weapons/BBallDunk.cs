@@ -1,7 +1,4 @@
 using BBallMod.Projectiles;
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
@@ -17,11 +14,11 @@ namespace BBallMod.Items.Weapons
         }
 
 		public override void SetDefaults() {
-			item.damage = 10;
+			item.damage = 50;
 			item.magic = true;
             item.noMelee = true; //so the item's animation doesn't do damage
             item.channel = true; //to hold the item
-            item.mana = 10;
+            item.mana = 40;
 			item.width = 30;
 			item.height = 30;
 			item.useTime = 1;
@@ -29,7 +26,7 @@ namespace BBallMod.Items.Weapons
             item.useStyle = 5;
             item.knockBack = 5;
 			item.value = 10000;
-			item.rare = 2;
+			item.rare = 4;
 			item.shoot = ProjectileType<BBallDunkProjectile>();
 		}
 

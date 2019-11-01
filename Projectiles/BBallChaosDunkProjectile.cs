@@ -41,7 +41,7 @@ namespace BBallMod.Projectiles
                 //projectile.hide = true;
 
                 if (player.velocity.Y != 0f) {
-                    player.velocity.Y += (0.5f * player.gravDir);   //only update fall speed if not on ground
+                    player.velocity.Y += (0.35f * player.gravDir);   //only update fall speed if not on ground
                 }
                 projectile.Center = player.Center;
 
@@ -65,10 +65,10 @@ namespace BBallMod.Projectiles
                     //set damage from max fall speed reached
                     if (projectile.ai[0] > player.maxFallSpeed) {
                         baseRad += 40;   //bigger radius for chaos dunk
-                        projectile.damage = (int)player.maxFallSpeed * projectile.damage * 2; //chaos dunk
+                        projectile.damage = 4 * projectile.damage; //chaos dunk
                     } else {
                         baseRad += (int) projectile.ai[0] / 10;
-                        projectile.damage = (int)(projectile.ai[0] / 5) * projectile.damage;     //make damage proportional to fall speed
+                        projectile.damage = (int)(projectile.ai[0] / 25) * projectile.damage;     //make damage proportional to fall speed
                     }
 
                     //resize projectile for explosion and set damage
